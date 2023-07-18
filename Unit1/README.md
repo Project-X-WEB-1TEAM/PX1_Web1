@@ -32,6 +32,8 @@ Project-X_23_1차 테스트 Web 부문 1번 과제에 대한 README 입니다.
 - 웹 서버를 설치하고, 포트를 설정하는 방법 습득
     - Mac에서 `Brew install Nginx` 명령을 활용해 Nginx 설치 후 `brew info nginx` 를 활용해 포트와 루트 경로에 표시될 html 파일 경로를 체크했다.
         - Docroot is: /usr/local/var/www
+            - nginx 구동에 사용되는 문서들의 경로를 작업 경로에 심볼릭 링크로 연결해 작업했습니다.
+                - `ln -s /usr/local/var/www [작업 경로]`
         - config 파일: /usr/local/etc/nginx/nginx.conf
             - config 파일을 수정해 기본값인 8080포트에서 80포트로 변경했다.
 - 웹 서버를 시작하고, 웹 브라우저에서 정상적으로 시작하는지  확인
