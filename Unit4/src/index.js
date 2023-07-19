@@ -1,6 +1,5 @@
-const test = () => {
-    const time = 0;
-    console.log(time);
+const callConsoleLog = () => {
+    console.log("that's the spirit!!");
 }
 
-test();
+callConsoleLog();
