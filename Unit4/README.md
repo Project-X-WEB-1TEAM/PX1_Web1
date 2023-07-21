@@ -32,4 +32,90 @@ Project-X_23_1차 테스트 Web 부문 4번 과제에 대한 README 입니다.
 
 ## 요구사항에 따른 문제 해결 과정
 
-# 개선사항
+- JavaScript의 변수 선언은 `var, let, const`  세 가지 방식이 있습니다.
+    - var
+        - 가장 오래된 변수 선언자로 함수 스코프(함수 내부에서 선언하면 함수 내부에서만 사용가능한 변수로, 함수 외부에 선언하면 전역변수로 작동)를 갖습니다.
+        - 해당 스코프의 최상단으로 호이스팅됩니다. 호이스팅 된 이후로 할당이 될 때까지 undefined 값을 갖습니다.
+    - let
+        - ES6 이후로 나온 변수 선언자로 블록 스코프(블록 {} 내부에서만 유효한 변수로 작동)를 갖습니다.
+        - 해당 블록의 최 상단으로 호이스팅되지만 초기화되지 않습니다. 선언 할당하기 전에 접근하게 되면 ReferenceError가 발생합니다.
+    - const
+        - ES6 이후로 나온 변수 선언자로 블록 스코프(블록 {} 내부에서만 유효한 변수로 작동)를 갖습니다.
+        - let과 마찬가지로 최상단으로 호이스팅되지만 초기화 되지 않습니다.
+        - var, let과 달리 재할당이 되지 않아 상수를 선언하기 위해 쓰입니다.
+- JavaScript의 함수 선언은 익명, 선언 두 가지 방식이 있습니다.
+    - 선언적 함수
+        - 함수의 이름을 따로 명시하는 경우
+            
+            ```cpp
+            function callConsoleLog2() {
+              var var1 = 1;
+              let var2 = 2;
+              const var3 = 3;
+              var4 = 4;
+              if (var4 === 4)
+                console.log("var4는 4입니다.");
+              console.log("선언적 함수 선언 입니다.");
+            }
+            ```
+            
+    - 익명 함수
+        - 함수의 이름을 명시하지 않는 경우
+        
+        ```cpp
+        //익명 함수를 callConsoleLog라는 변수에 저장
+        const callConsoleLog = () => {
+          var var1 = 1;
+          let var2 = 2;
+          const var3 = 3;
+          var4 = 4;
+          console.log("익명 함수 선언 입니다.");
+        };
+        ```
+        
+- JavaScript의 객체
+    
+    ```cpp
+    const Object1 = {
+        Object: "객체 속성",
+        Print: "출력 입니다.",
+        Number: 2,
+      };
+    ```
+    
+- JavaScript의 클래스 선언과 상속
+    
+    ```cpp
+    // 프로토 타입으로 상속
+    const Dog = Object.create(Animal);
+    Dog.breed = "라브라도";
+    Dog.speak = function () {
+      console.log(`${this.name}이(가) 짖습니다. 프로토 타입 상속.`);
+    };
+    
+    const myDog = Object.create(Dog);
+    myDog.name = "맥스";
+    myDog.speak();
+    
+    // 클래스로 상속
+    class Animal2 {
+      constructor(name) {
+        this.name = name;
+      }
+    
+      speak() {
+        console.log(`${this.name}이(가) 소리를 냅니다.`);
+      }
+    }
+    
+    class Dog2 extends Animal2 {
+      constructor(name, breed) {
+        super(name);
+        this.breed = breed;
+      }
+    
+      speak() {
+        console.log(`${this.name}이(가) 짖습니다. 클래스 상속.`);
+      }
+    }
+    ```
